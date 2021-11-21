@@ -1,0 +1,286 @@
+<!-- <br>
+<nav class="navbar navbar-light bg-success">
+    <div class="container-fluid">
+      <h1 style="color:aliceblue; text-align:center;">Product Details</h1>
+      <button class="btn btn-success" routerLink="cart" style="right: 0px; ">
+        <i style="font-size: 20px; " class="fas fa-cart-plus"></i>
+        <div style="font-size: 10px;" class="badge bg-danger">3</div>
+      </button>  
+    <div class="form-group">
+     <input type="text" class="form-control" placeholder="Search Products">
+  </div>
+  <span class="fas fa-search search-icon"></span>
+      <div class="d-flex">
+        <button *ngIf="show==true" type="button" (click)="clickAdd()" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success p-2">Add Product</button>
+      </div>
+  </div>
+  <div>
+  </div>
+</nav>
+    <div class="card-top container-fluid">
+      <div class="container d-flex">
+        <div class="item">
+          <a>
+          <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+          <h6 style="text-align: center; ">All products</h6>
+        </a>
+      </div>
+      <div class="item">
+        <a>
+          <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/130/000000/external-tv-music-icongeek26-linear-colour-icongeek26.png"/>
+        <h6 style="text-align: center; ">Television</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/130/000000/external-phone-communication-icongeek26-outline-colour-icongeek26.png"/>
+      <h6 style="text-align: center; ">Mobile</h6>
+    </a>
+   </div>
+   <div class="item">
+    <a>
+      <img src="https://img.icons8.com/emoji/125/000000/laptop-emoji.png"/>
+    <h6 style="text-align: center;">Laptop</h6>
+  </a>
+ </div>
+   </div>
+   </div>
+
+
+
+   <ng-container *ngFor="let item of arrProduct1 ">
+     
+   </ng-container>
+
+
+
+  <br><br><br><br>
+  <div class="body">
+  <div class='container' *ngFor='let index of productData; let i = index; let even = even'>
+       <div class="row" *ngIf="even">
+       <div class='col-md-6' >
+        <div class="card" style="width: 100%;">
+          <img class="card-img-top" src="{{productData[i].image}}" alt="Card image cap" style="width: 80%;">
+          <div class="card-body">
+              <p style="font-size:20px;font-weight: bold;">{{productData[i].productName}}</p>
+              
+
+              
+            <p class="card-text">{{productData[i].description}}</p>
+            <p class="card-text">{{productData[i+1].rating}}</p>
+            <p style="font-size:20px;font-weight: bold;">Price : Rs.{{productData[i].cost}}</p><br>
+             <div *ngIf="show!=true"> <button   type="button" class="btn btn-primary"(click)=addtoCart(index)>Add to Cart</button> <br><br> </div>
+               <button *ngIf="show==true" (click)="onEdit(productData[i])" style="color: aliceblue;" class="btn btn-info" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+               <button *ngIf="show==true" (click)="deleteProduct(productData[i])" class="btn btn-danger mx-3"> Delete</button>
+          </div>
+        </div>
+       </div>
+     
+       
+       <div class='col-md-6' *ngIf="productData.length>i+1">
+       <div class="card" style="width:100%;" >
+          <img class="card-img-top" src="{{productData[i+1].image}}" alt="Card image cap" style="width: 80%;">
+          <div class="card-body">
+            
+              <p style="font-size:20px;font-weight: bold;">{{productData[i+1].productName}}</p>
+              
+
+              
+            <p class="card-text">{{productData[i+1].description}}</p>
+            <p class="card-text">{{productData[i+1].rating}}</p>
+            <p style="font-size:20px;font-weight: bold;">Price : Rs.{{productData[i+1].cost}}</p><br>
+            <div *ngIf="show!=true"> <button   type="button" class="btn btn-primary" (click)=addtoCart(index)>Add to Cart</button> <br><br> </div>
+               <button *ngIf="show==true" (click)="onEdit(productData[i+1])" style="color: aliceblue;" class="btn btn-info" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+               <button *ngIf="show==true" (click)="deleteProduct(productData[i+1])" class="btn btn-danger mx-3"> Delete</button>
+
+          </div>
+        </div>
+        </div>
+  
+    
+  </div>
+      
+</div>   
+  
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" >
+          <div class="modal-content" style="background-color: darkgray;">
+            <div class="modal-header" >
+              <h5 class="modal-title" id="exampleModalLabel">Products Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                
+              </button>
+            </div>
+            <div class="modal-body bg-info">
+
+                <div class="modal-body bg-info">
+
+    <form [formGroup]="formValue" (ngSubmit)="postProductDetails">
+        <div class="form-group">
+            <label for="examplefproductId">Product Id</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleproductId"
+              placeholder="product  ID"
+              formControlName="productId"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleproductName">Product Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleproductName"
+              placeholder="product name.."
+              formControlName="productName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="examplelCost">Cost</label>
+            <input
+              type="number"
+              class="form-control"
+              id="examplelCost"
+              placeholder="cost..."
+              formControlName="cost"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleproductDesc">Product Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleproductDesc"
+              placeholder="product Description.."
+              formControlName="description"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="examplelrating">Rating</label>
+            <input
+              type="number"
+              class="form-control"
+              id="examplelrating"
+              placeholder="Rating..."
+              formControlName="rating"
+            />
+          </div>
+      <br />
+      
+    </form></div>
+    <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+          <button type="button" *ngIf="showAdd" (click)="postProductDetails()" class="btn btn-primary">ADD</button>
+          <button type="button" *ngIf="showUpdate"  (click)="updateProductDetails()" class="btn btn-primary">UPDATE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+  <!-- <div class="footer-basic">
+    <footer>
+        <div class="social"><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="http://localhost:4200/aboutus">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Company Name © 2018</p>
+    </footer>
+</div> -->
+<header>
+  <br>
+  <div class="navbar navbar-dark bg-success shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+       
+         
+          <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+          </div>
+          <span class="fas fa-search search-icon"></span>
+
+
+      </div>
+      <button routerLink="cart" class="btn btn-success">
+          <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+          <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+      </button>
+  </div>
+</header>
+<div
+  class="bg-image"
+  style="
+    background-image: url('img3.jpeg');
+    
+    
+  "
+>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+          <a (click)="filter('')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+              <h6>All products</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('TV')">
+            <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/130/000000/external-tv-music-icongeek26-linear-colour-icongeek26.png"/>
+            <h6 style="text-align: center; ">Television</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Mobile')">
+            <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/130/000000/external-phone-communication-icongeek26-outline-colour-icongeek26.png"/>
+            <h6 style="text-align: center; ">Mobile</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Laptop')">
+            <img src="https://img.icons8.com/emoji/125/000000/laptop-emoji.png"/>
+            <h6 style="text-align: center;">Laptop</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a (click)="filter('Speaker')">
+          <img src="https://img.icons8.com/external-wanicon-two-tone-wanicon/100/000000/external-speaker-happy-new-year-wanicon-two-tone-wanicon.png"/>
+          <h6 style="text-align: center;">Speaker</h6>
+        </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Headphone')">
+        <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/120/000000/external-headphones-construction-justicon-lineal-color-justicon.png"/>
+        <h6 style="text-align: center;">HeadPhone</h6>
+      </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('Router')">
+      <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/100/000000/external-router-essentials-icongeek26-outline-colour-icongeek26.png"/>
+      <h6 style="text-align: center;">Router</h6>
+    </a>
+</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'productName'">
+          <div class="card col-md-5">
+              <img src="{{item.image}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Rating:-{{item.rating}}</h5>
+              <p><strong>Price:</strong> Rs{{item.cost}}</p>
+              <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+      
+       

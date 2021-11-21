@@ -1,0 +1,112 @@
+<div
+  class="bg-image"
+  style="
+    background-image: url('img16.jpeg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    
+  "
+>
+<br><br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1 style="color: white">Sign Up</h1>
+            <h6 style="color: yellow">Please enter your Credential!!</h6>
+          </div>
+          <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+              <div class="form-group">
+                  <label for="examplefirstName">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="examplefirstName"
+                    placeholder="first  name"
+                    formControlName="firstName"
+                  />
+                  <span class="text-danger" *ngIf="signupForm.controls['firstName'].dirty && 
+                  signupForm.hasError('required','firstName')">
+                   *First name is required</span>
+                </div>
+                <div class="form-group">
+                  <label for="examplelastName">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="examplelastName"
+                    placeholder="last name"
+                    formControlName="lastName"
+                  />
+                  <span class="text-danger" *ngIf="signupForm.controls['lastName'].dirty && 
+                  signupForm.hasError('required','lastName')">
+                   *Last name is required</span>
+                </div>
+                <div class="form-group">
+                  <label for="examplelnumber">Phone Number</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="examplelnumber"
+                    placeholder="phone Number"
+                    formControlName="number"
+                  />
+                  <span class="text-danger" *ngIf="signupForm.controls['number'].dirty && 
+                  signupForm.hasError('required','number')">
+                   *Phone No is required</span>
+                </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                formControlName="email"
+              />
+              <span class="text-danger" *ngIf="signupForm.controls['number'].dirty && 
+              signupForm.hasError('required','number')">
+               *Email Address is required</span>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+                formControlName="password"
+              />
+              <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && 
+              signupForm.hasError('required','password')">
+               *Password is required</span>
+            </div>
+            <div class="form-group">
+              <label for="examplelocation">Location</label>
+              <input
+                type="text"
+                class="form-control"
+                id="examplelocation"
+                placeholder="Location"
+                formControlName="location"
+              />
+              <span class="text-danger" *ngIf="signupForm.controls['location'].dirty && 
+              signupForm.hasError('required','location')">
+               *Location is required</span>
+            </div>
+            <br />
+            <div class="form-group">
+              <input type="checkbox" id="admin" name="admin" value="admin" formControlName="admin"/>
+              <label for="admin">&nbsp;&nbsp; I am a Admin</label><br />
+            </div>
+            <button type="submit" [disabled]="!signupForm.valid"  class="btn btn-primary">SignUp</button>
+          </form>
+          <a style="color: white;margin-top: 10px;" routerLink="/login">Already Registered?click to Login!!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
