@@ -1,0 +1,383 @@
+{
+  "users": [
+    {
+      "id": 101,
+      "firstname": "Virat",
+      "lastname": "Kolhi",
+      "email": "virat@gmail.com",
+      "phoneno": "6728975847",
+      "location": "Bangalore"
+    },
+    {
+      "id": 102,
+      "firstname": "Ravi",
+      "lastname": "Kumar",
+      "email": "ravi@gmail.com",
+      "phoneno": "6278975987",
+      "location": "kanpur"
+    },
+    {
+      "id": 103,
+      "firstname": "Saram",
+      "lastname": "Singh",
+      "email": "saram@gmail.com",
+      "phoneno": "6279875847",
+      "location": "kashmir"
+    },
+    {
+      "id": 104,
+      "firstname": "Mridual",
+      "lastname": "Shah",
+      "email": "mridual@gmail.com",
+      "phoneno": "6278975847",
+      "location": "Bangalore"
+    },
+    {
+      "id": 105,
+      "firstname": "Steve",
+      "lastname": "Smith",
+      "email": "steve@gmail.com",
+      "phoneno": "8978975847",
+      "location": "gujart"
+    }
+  ],
+  "signUpUsers": [
+    {
+      "firstName": "Sayen",
+      "lastName": "mahanty",
+      "password": "12345678",
+      "number": 6543218906,
+      "email": "s@gmail.com",
+      "location": "Kanpur",
+      "id": 1
+    },
+    {
+      "firstName": "Sayende",
+      "lastName": "dmd",
+      "password": "123",
+      "number": 5666,
+      "email": "s1@gmail.com",
+      "location": "123",
+      "id": 2
+    },
+    {
+      "firstName": "s",
+      "lastName": "s",
+      "password": "123",
+      "number": 233,
+      "email": "s2@gmail.com",
+      "location": "123",
+      "id": 3
+    },
+    {
+      "firstName": "Surya",
+      "lastName": "m",
+      "password": "12345678",
+      "number": 67,
+      "email": "s3@gmail.com",
+      "admin": true,
+      "location": "123",
+      "id": 4
+    },
+    {
+      "firstName": "Surya",
+      "lastName": "Yadav",
+      "password": "1234",
+      "number": 5643217890,
+      "email": "s4@gmail.com",
+      "admin": true,
+      "location": "Mumbai",
+      "id": 5
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "password": "",
+      "number": "",
+      "email": "",
+      "admin": "",
+      "location": "",
+      "id": 6
+    },
+    {
+      "firstName": "Sayende",
+      "lastName": "",
+      "password": "",
+      "number": "",
+      "email": "",
+      "admin": "",
+      "location": "",
+      "id": 7
+    },
+    {
+      "firstName": "n",
+      "lastName": "n",
+      "password": "0",
+      "number": 8,
+      "email": "9",
+      "admin": "",
+      "location": "y",
+      "id": 8
+    },
+    {
+      "firstName": "s",
+      "lastName": "m",
+      "password": "12345",
+      "number": 4321567,
+      "email": "s5@gmail.com",
+      "admin": true,
+      "location": "Mumbai",
+      "id": 9
+    },
+    {
+      "firstName": "Sayende",
+      "lastName": "ma",
+      "password": "1234",
+      "number": 234,
+      "email": "s5@gmail.com",
+      "admin": true,
+      "location": "1234",
+      "id": 10
+    },
+    {
+      "firstName": "Sm",
+      "lastName": "mah",
+      "password": "12345",
+      "number": 435263893,
+      "email": "s7@gmail.com",
+      "admin": "",
+      "location": "Mumbai",
+      "id": 11
+    }
+  ],
+  "Products": [
+    {
+      "id": 1,
+      "productId": "101",
+      "productName": "Xiaomi Mi TV 4X 50-inch",
+      "cost": 29999,
+      "description": "50-inch 4K HDR-10 display (3840 x 2160 pixels), 60 Hz refresh rate | 20W speakers Dolby+ DTS-HD | Ports: USB 2.0×2, HDMI 3 AV1, S/PDIF 1, RF 1, WIFI: 2.4GHz/5GHz, LAN 1 | PatchWall with Android TV | 64-bit Quad-core Amlogic Cortex A53 quad-core processor, 2GB RAM, 8GB eMMC storage",
+      "image": "../assets/img23.jpeg",
+      "category": "TV",
+      "rating": 4.7
+    },
+    {
+      "id": 2,
+      "productId": "102",
+      "productName": "realme 108 cm (43 inch) Full HD LED Smart Android TV ",
+      "cost": 24999,
+      "description": "Bring home this TV from realme and experience the stunning visuals that result from its Chroma Boost Picture Engine. Boasting a Bezel-less design and Dolby Surround Audio, this Android TV blends right into your decor and offers you audio performance that makes your favourite TV shows, movies, and other video content all the more enjoyable.",
+      "image": "../assets/img25.jpeg",
+      "category": "TV",
+      "rating": 3.8
+    },
+    {
+      "id": 4,
+      "productId": "103",
+      "productName": "OnePlus 80 cm (32 inches) Y Series HD Ready LED Smart Android TV 32Y1",
+      "cost": 19999,
+      "description": "Smart TV Features: Android TV 9.0 | OnePlus Connect | Google Assistant | Play Store | Chromecast | Shared Album | Supported Apps : Netflix, YouTube, Prime video | Content Calendar | OxygenPlay",
+      "image": "../assets/img26.jpeg",
+      "category": "TV",
+      "rating": 4.1
+    },
+    {
+      "id": 5,
+      "productId": 6353,
+      "productName": "Vivo Y72 5G 8 GB 128 GB Prism Magic 8 GB RAM | 128 GB ROM | Android 11 Qualcomm Snapdragon Octa Core 480 Processor Rear Camera: 48MP + 2MP | Front Camera: 8MP 5000 mAh Lithium Polymer Battery | 18W Fast Charge",
+      "cost": 20990,
+      "description": "16.71 cm (6.58 inch) | FHD+",
+      "image": "../assets/img28.webp",
+      "category": "Mobile",
+      "rating": 4.4
+    },
+    {
+      "id": 6,
+      "productId": 10,
+      "productName": "Realme 8S 5G RMX3381 (Purple, 128GB, 4GB RAM)",
+      "cost": 17999,
+      "description": "6.5 inches (16.51 cm) 405 PPI, Full HD+ LCD In-cell Display | Fingerprint Sensor 4 GB RAM | 128 GB ROM | Expandable Upto 1 TB64 MP + 2 MP + 2 MP Triple Primary Cameras | 16 MP Front Camer",
+      "image": "../assets/img29.jpeg",
+      "category": "Mobile",
+      "rating": 4.5
+    },
+    {
+      "id": 7,
+      "productId": 24338,
+      "productName": "tGalaxy M21 2021 Edition (4GB RAM)",
+      "cost": 12999,
+      "description": "No Cost EMI starts from ₹ 2154.14/ month. 16.21cm (6.4)FHD+ sAMOLED Display  6000 mAh Battery with 15W Fast Charging True 48MP Triple Camera",
+      "image": "../assets/img30.jpeg",
+      "category": "Mobile",
+      "rating": 3.5
+    },
+    {
+      "id": 8,
+      "productId": 24338,
+      "productName": "Acer Aspire 5 Thin And Light Laptop (AMD Ryzen 5/ 16GB/ 512GB SSD/ Windows 10 Home)| A515-45 With 39.6 Cm (15.6 Inch)",
+      "cost": 69000,
+      "description": "AMD Ryzen 5-5500U hexa-core processor Windows 10 Home 64-bit AMD Radeon Graphics 16 GB of DDR4 system memory, upgradable up to 24 GB of DDR4 system memory using single soDIMM module 512 GB SSD, PCIe Gen3 8 Gb/s up to 4 lanes, NVMe Supports up to 2 TB HDD 6.3cm (2.5-inch) 5400 RPM",
+      "image": "../assets/img31.png",
+      "category": "Laptop",
+      "rating": 4.6
+    },
+    {
+      "id": 9,
+      "productId": 24338,
+      "productName": "HP 14 11th Gen Intel Core i5 Processor 14 inches HD Laptop, 8GB/512GB SSD/Windows 10/MS Office (Natural Silver/1.46Kg)",
+      "cost": 56457,
+      "description": "11th Gen Intel Core i5-1135G7 (up to 4.2 GHz with Intel Turbo Boost Technology, 8 MB L3 cache, 4 cores) Memory: 8 GB DDR4-2666 MHz RAM (2 x 4 GB), upgradable up to 16 GB (2 x 8 GB) | Storage: 512GB PCIe NVMe M.2 SSD Display: 14-Inch (35.6 cm) HD anti-glare micro-edge, 250 nits, 45% NTSC (1366 x 768)",
+      "image": "../assets/img33.jpg",
+      "category": "Laptop",
+      "rating": 4.7
+    },
+    {
+      "id": 10,
+      "productId": 24338,
+      "productName": "BOAT BLITZ 1500",
+      "description": "good product,best quality with best sound and price",
+      "cost": 3499,
+      "image": "../assets/img35.png",
+      "category": "Speaker",
+      "rating": 3.9
+    },
+    {
+      "id": 11,
+      "productId": 1599,
+      "productName": "ZEBRONICS ZEB-WARRIOR",
+      "cost": 1599,
+      "description": "Zeb-Warrior is a USB powered 2.0 speaker best fit for your gaming experience as it comes in a modern design and adds an element with its breathing RGB LED lights. The speaker has AUX support and comes with volume control.",
+      "image": "../assets/img36.jpeg",
+      "category": "Speaker",
+      "rating": 3.4
+    },
+    {
+      "id": 12,
+      "productId": 24338,
+      "productName": "ZEBRONICS Zeb-Thunder",
+      "cost": 1199,
+      "description": "Multi Connectivity Options: Be spoilt for choice with multi-connectivity options like like BT, 3.5mm AUX input, FM and MicroSD card",
+      "image": "../assets/img37.jpeg",
+      "category": "Headphone",
+      "rating": 3.8
+    },
+    {
+      "id": 13,
+      "productId": 24338,
+      "productName": "Beats Pro Over-Ear Headphones - Black",
+      "cost": 10999,
+      "description": "Beats Pro over-ear headphones are made for relentless, heavy-duty use in the studio or in the club. Delivering superb audio at all times, Beats Pro headphones give you deep bass response and sound across the spectrum. ",
+      "image": "../assets/img38.jpeg",
+      "category": "Headphone",
+      "rating": 4.8
+    },
+    {
+      "id": 14,
+      "productId": 24338,
+      "productName": "AC2600 Gaming Router ",
+      "cost": 14999,
+      "description": "4 Ethernet Ports and Wireless speeds up to 2.6 Gbps",
+      "image": "../assets/img40.png",
+      "category": "Router",
+      "rating": 4.2
+    },
+    {
+      "id": 14,
+      "productId": 24338,
+      "productName": "D-Link DIR-825 MU-MIMO",
+      "cost": 3200,
+      "description": "AC 1200 Mbps WAVE 2 Concurrent dual band wireless Router with 4 High gain Omni Antenna",
+      "image": "../assets/img41.jpeg",
+      "category": "Router",
+      "rating": 3.8
+    }
+  ],
+  "admin": [
+    {
+      "firstName": "m",
+      "lastName": "m",
+      "password": "123",
+      "number": 67,
+      "email": "s3@gmail.com",
+      "admin": true,
+      "location": "123",
+      "id": 1
+    },
+    {
+      "firstName": "Surya",
+      "lastName": "Yadav",
+      "password": "1234",
+      "number": 5643217890,
+      "email": "s4@gmail.com",
+      "admin": true,
+      "location": "Mumbai",
+      "id": 2
+    },
+    {
+      "firstName": "s",
+      "lastName": "m",
+      "password": "12345",
+      "number": 4321567,
+      "email": "s5@gmail.com",
+      "admin": true,
+      "location": "Mumbai",
+      "id": 3
+    },
+    {
+      "firstName": "Sayende",
+      "lastName": "ma",
+      "password": "1234",
+      "number": 234,
+      "email": "s5@gmail.com",
+      "admin": true,
+      "location": "1234",
+      "id": 4
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productId": "101",
+      "productName": "Xiaomi Mi TV 4X 50-inch",
+      "cost": 29999,
+      "description": "50-inch 4K HDR-10 display (3840 x 2160 pixels), 60 Hz refresh rate | 20W speakers Dolby+ DTS-HD | Ports: USB 2.0×2, HDMI 3 AV1, S/PDIF 1, RF 1, WIFI: 2.4GHz/5GHz, LAN 1 | PatchWall with Android TV | 64-bit Quad-core Amlogic Cortex A53 quad-core processor, 2GB RAM, 8GB eMMC storage",
+      "image": "../assets/img23.jpeg",
+      "category": "TV",
+      "rating": 4.7,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "productId": "102",
+      "productName": "realme 108 cm (43 inch) Full HD LED Smart Android TV ",
+      "cost": 24999,
+      "description": "Bring home this TV from realme and experience the stunning visuals that result from its Chroma Boost Picture Engine. Boasting a Bezel-less design and Dolby Surround Audio, this Android TV blends right into your decor and offers you audio performance that makes your favourite TV shows, movies, and other video content all the more enjoyable.",
+      "image": "../assets/img25.jpeg",
+      "category": "TV",
+      "rating": 3.8,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "productId": "103",
+      "productName": "OnePlus 80 cm (32 inches) Y Series HD Ready LED Smart Android TV 32Y1",
+      "cost": 19999,
+      "description": "Smart TV Features: Android TV 9.0 | OnePlus Connect | Google Assistant | Play Store | Chromecast | Shared Album | Supported Apps : Netflix, YouTube, Prime video | Content Calendar | OxygenPlay",
+      "image": "../assets/img26.jpeg",
+      "category": "TV",
+      "rating": 4.1,
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "productId": 24338,
+      "productName": "tGalaxy M21 2021 Edition (4GB RAM)",
+      "cost": 12999,
+      "description": "No Cost EMI starts from ₹ 2154.14/ month. 16.21cm (6.4)FHD+ sAMOLED Display  6000 mAh Battery with 15W Fast Charging True 48MP Triple Camera",
+      "image": "../assets/img30.jpeg",
+      "category": "Mobile",
+      "rating": 3.5,
+      "quantity": 7
+    }
+  ]
+}

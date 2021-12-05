@@ -1,0 +1,47 @@
+<div class="body">
+<br>
+<h4>User Details &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+     <input type="number"   placeholder="Enter the id to Search"  [(ngModel)]="idForProductsRouting">&nbsp;&nbsp;
+    <!-- <button type="button" class="button" (click)="routeBasedOnId()">Search Id</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <input type="text"   placeholder="Enter the Name to Search"  [(ngModel)]="nameForProductsRouting">&nbsp;&nbsp; 
+    <!-- <button type="button" >Search Name</button> -->
+    </h4><br>
+<table class="table table-hover table-bordered border-primary m-t-4">
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor="let header of columns">{{header}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user1 of arrUsers|filterTable:idForProductsRouting|filterTable:nameForProductsRouting">
+      <td>{{user1.id}}</td>
+      <td>{{user1.firstname}}</td>
+      <td>{{user1.lastname}}</td>
+      <td>{{user1.email}}</td>
+      <td>{{user1.phoneno}}</td>
+      <td>{{user1.location}}</td>
+    </tr>
+   
+  </tbody>
+  <!-- <input type="number"  (click)="routeBasedOnId()" placeholder="Enter the id to Search"  [(ngModel)]="idForProductsRouting">
+
+  <input type="number"  (click)="routeBasedOnName()" placeholder="Enter the Name to Search"  [(ngModel)]="nameForProductsRouting"> -->
+<br><br>
+  <button  class="button" type="button" (click)="displayAll()">Display All</button>
+</table>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<div class="footer-basic">
+  <footer>
+      <div class="social"><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Home</a></li>
+          <li class="list-inline-item"><a href="#">Services</a></li>
+          <li class="list-inline-item"><a href="http://localhost:4200/aboutus">About</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+      </ul>
+      <p class="copyright">Company Name © 2018</p>
+  </footer>
+</div>
