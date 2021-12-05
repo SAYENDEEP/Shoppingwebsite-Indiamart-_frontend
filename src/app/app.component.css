@@ -1,3 +1,11 @@
 .right{
     float: right;
 }
+.chip img {
+    float: right;
+   
+    height: 40px;
+    width: 40px;
+    border-radius: 60%; 
+    vertical-align: top;
+  }

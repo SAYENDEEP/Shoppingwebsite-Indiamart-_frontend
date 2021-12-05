@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FilterTablePipe } from './filter-table.pipe';
 import { CardComponent } from './card/card.component';
 import { FilterPipe } from './filter.pipe';
+import { CheckoutComponent } from './Component/checkout/checkout.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { FilterPipe } from './filter.pipe';
     FilterTablePipe,
     CardComponent,
     FilterPipe,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

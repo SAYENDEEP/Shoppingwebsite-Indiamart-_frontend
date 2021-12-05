@@ -56,6 +56,10 @@
                   <span class="text-danger" *ngIf="signupForm.controls['number'].dirty && 
                   signupForm.hasError('required','number')">
                    *Phone No is required</span>
+                   <span class="text-danger" *ngIf="signupForm.controls['number'].dirty && 
+                   signupForm.hasError('pattern','number')">
+                    *Phone No is not in proper format</span>
+                   
                 </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -70,6 +74,9 @@
               <span class="text-danger" *ngIf="signupForm.controls['number'].dirty && 
               signupForm.hasError('required','number')">
                *Email Address is required</span>
+               <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && 
+               signupForm.hasError('email','email')">
+               *Email Id is not in correct format </span>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
@@ -83,6 +90,9 @@
               <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && 
               signupForm.hasError('required','password')">
                *Password is required</span>
+               <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && 
+               signupForm.hasError('minlength','password')">
+                 *Password is not of required minimum length</span>
             </div>
             <div class="form-group">
               <label for="examplelocation">Location</label>

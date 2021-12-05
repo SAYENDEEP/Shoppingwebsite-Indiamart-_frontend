@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthGuarService } from './services/auth-guar.service';
 import { CardComponent } from './card/card.component';
+import { CheckoutComponent } from './Component/checkout/checkout.component';
 const routes: Routes = [
    {path:'',redirectTo:"/home",pathMatch:'full'},
    {path:'home', component:HomeComponent},
@@ -20,7 +21,7 @@ const routes: Routes = [
    {path:'userdisplay',component:UserdisplayComponent,canActivate:[AuthGuarService]},
   //  {path:'userdisplay/:firstname',component:UserdisplayComponent},
     {path:'userdisplay/:id',component:UserdisplayComponent,canActivate:[AuthGuarService]},
-  
+    {path:'payment',component:CheckoutComponent},
     {path:'login',component:LoginComponent},
    {path:'signUp',component:SignupComponent},
    {path:'**',component:NopagefondComponent}

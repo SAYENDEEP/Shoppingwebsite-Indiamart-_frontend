@@ -68,19 +68,29 @@
                             <th>Description</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                    
+                            <th>Total Cost</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of products; let i = index">
+                        <tr *ngFor="let item of cartData; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{item.productName}}</td>
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td style="width: 25%;">{{item.description}}</td>
                             <th style="width: 12%;">{{item.cost}}</th>
-                            <td style="width: 12%;">{{item.quantity}}</td>
-                            <!-- <td style="width: 12%;">{{item.total}}</td> -->
+                          
+                            <td style="width: 12%;">
+                                <div class="form-group">
+                                      <button  class="button1"   (click)="decQuant(item.id)">-</button
+                                      >&nbsp;&nbsp;
+                                      <input type=number class=" input-box" value="{{item.quantity}}" (keyup)="find($event,item.id)" >
+                                      &nbsp;&nbsp;<button class="button1" (click)="incQuant(item.id)">
+                                        +
+                                      </button>
+                                  </div> 
+                            </td>
+                            <td style="width: 12%;">{{item.quantity*item.cost}}</td>
                             <td>
                                 <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
@@ -89,8 +99,8 @@
                             <td colspan="4"></td>
                             <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
                             <td><button routerLink="/electronics" class="btn btn-primary">Shop More</button></td>
-                            <td><button class="btn btn-success">Checkout</button></td>
-                            <!-- <td><strong>Grand Total : ${{grandTotal}}</strong></td> -->
+                            <td><button class="btn btn-success" routerLink="/payment">Checkout</button></td>
+                            <td><strong>Grand Total : ${{Totalprice}}</strong></td>
                         </tr>
                     </tbody>
                 </table>

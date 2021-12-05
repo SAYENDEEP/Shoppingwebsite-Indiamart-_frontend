@@ -45,7 +45,7 @@
     {
       "firstName": "Sayen",
       "lastName": "mahanty",
-      "password": "12345",
+      "password": "12345678",
       "number": 6543218906,
       "email": "s@gmail.com",
       "location": "Kanpur",
@@ -70,9 +70,9 @@
       "id": 3
     },
     {
-      "firstName": "m",
+      "firstName": "Surya",
       "lastName": "m",
-      "password": "123",
+      "password": "12345678",
       "number": 67,
       "email": "s3@gmail.com",
       "admin": true,
@@ -332,6 +332,52 @@
       "admin": true,
       "location": "1234",
       "id": 4
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productId": "101",
+      "productName": "Xiaomi Mi TV 4X 50-inch",
+      "cost": 29999,
+      "description": "50-inch 4K HDR-10 display (3840 x 2160 pixels), 60 Hz refresh rate | 20W speakers Dolby+ DTS-HD | Ports: USB 2.0×2, HDMI 3 AV1, S/PDIF 1, RF 1, WIFI: 2.4GHz/5GHz, LAN 1 | PatchWall with Android TV | 64-bit Quad-core Amlogic Cortex A53 quad-core processor, 2GB RAM, 8GB eMMC storage",
+      "image": "../assets/img23.jpeg",
+      "category": "TV",
+      "rating": 4.7,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "productId": "102",
+      "productName": "realme 108 cm (43 inch) Full HD LED Smart Android TV ",
+      "cost": 24999,
+      "description": "Bring home this TV from realme and experience the stunning visuals that result from its Chroma Boost Picture Engine. Boasting a Bezel-less design and Dolby Surround Audio, this Android TV blends right into your decor and offers you audio performance that makes your favourite TV shows, movies, and other video content all the more enjoyable.",
+      "image": "../assets/img25.jpeg",
+      "category": "TV",
+      "rating": 3.8,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "productId": "103",
+      "productName": "OnePlus 80 cm (32 inches) Y Series HD Ready LED Smart Android TV 32Y1",
+      "cost": 19999,
+      "description": "Smart TV Features: Android TV 9.0 | OnePlus Connect | Google Assistant | Play Store | Chromecast | Shared Album | Supported Apps : Netflix, YouTube, Prime video | Content Calendar | OxygenPlay",
+      "image": "../assets/img26.jpeg",
+      "category": "TV",
+      "rating": 4.1,
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "productId": 24338,
+      "productName": "tGalaxy M21 2021 Edition (4GB RAM)",
+      "cost": 12999,
+      "description": "No Cost EMI starts from ₹ 2154.14/ month. 16.21cm (6.4)FHD+ sAMOLED Display  6000 mAh Battery with 15W Fast Charging True 48MP Triple Camera",
+      "image": "../assets/img30.jpeg",
+      "category": "Mobile",
+      "rating": 3.5,
+      "quantity": 7
     }
   ]
 }

@@ -7,14 +7,17 @@ import { AuthenticationService } from './services/authentication.service';
 })
 export class AppComponent {
   title = 'DAY7';
- 
-  constructor(private authenticationService:AuthenticationService){};
+ username1:any;
+  constructor(private authenticationService:AuthenticationService){
+    this.username1=localStorage.getItem("username");
+  };
   
   logInForAuthGuard(){
     this.authenticationService.login();
   }
   logOutForAuthGuard(){
     this.authenticationService.logout();
+    localStorage.removeItem("username");
   }
   flaglogout:boolean=false;
   flaglogin:boolean=true;
@@ -22,7 +25,7 @@ export class AppComponent {
 ngDoCheck(){
   if(localStorage.getItem('isLoggedIn')=='true'){
     console.log(this.flaglogin);
-    
+    this.username1=localStorage.getItem("username");
     this.flaglogin=false;
     this.flaglogout=true;
   }

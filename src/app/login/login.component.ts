@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import {FormBuilder,FormGroup,Validator, Validators} from "@angular/forms"
+=======
+import {FormBuilder,FormGroup,Validator, Validators,FormControlName, FormControl} from "@angular/forms"
+>>>>>>> main
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Login } from '../login';
@@ -17,8 +21,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm=this.formBuidler.group({
+<<<<<<< HEAD
       email:['',Validators.required],
       password:['',Validators.required]
+=======
+      email:['',[Validators.required,Validators.email]],
+      password:['',[Validators.required,Validators.minLength(6)]]
+>>>>>>> main
   })
 }
 testadmin()
@@ -57,16 +66,35 @@ testadmin()
       // console.log(this.adminService.data.email);
       // console.log(this.adminService.data.password);
     }
+<<<<<<< HEAD
 
 login()
   {
     this.http.get<any>("http://localhost:3000/signUpUsers").subscribe(res=>{
      const user= res.find((a:any)=>{
+=======
+username:any;
+
+login()
+  {
+    console.log(this.loginForm.controls);
+//  this.loginForm = new FormGroup({
+//   email:new FormControl('',[Validators.required,Validators.email]),
+//   password:new FormControl('',[Validators.required,Validators.minLength(6)])
+//  })
+    this.http.get<any>("http://localhost:3000/signUpUsers").subscribe(res=>{
+     const user= res.find((a:any)=>{
+       this.username=a.firstName
+>>>>>>> main
      return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
      });
      if(user)
      {
        alert("Login Success!!");
+<<<<<<< HEAD
+=======
+       localStorage.setItem("username",this.username);
+>>>>>>> main
        this.fillLoginData();
        this.authservive.login(); 
        this.loginForm.reset();

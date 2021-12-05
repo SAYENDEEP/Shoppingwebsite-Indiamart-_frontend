@@ -165,8 +165,9 @@ import {ProductServiceService} from '../services/product-service.service';
       });
       this.cartService.getProducts()
        .subscribe(res=>{
-      this.totalItem = res.length;
-    })
+        this.totalItem = res.length;
+        // console.log(this.totalItem);
+      })
     });
 
     this.cartService.search.subscribe((val:any)=>{
@@ -174,8 +175,12 @@ import {ProductServiceService} from '../services/product-service.service';
     })
   }
   addtocart(item: any){
+   
     this.cartService.addtoCart(item);
+ 
+   
   }
+
   filter(category:string){
     this.filterCategory = this.productList
     .filter((a:any)=>{
