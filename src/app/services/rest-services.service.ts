@@ -7,19 +7,32 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class RestServicesService {
-URL="http://localhost:3000/users";
+URL1="http://localhost:8001/UserDisplay";
   constructor(private http:HttpClient) { }
   
   getUsers():Observable<any>{
-  return this.http.get<User[]>(this.URL);
+    var URL=this.URL1+'/getAllUser'
+  return this.http.get(URL);
   }
-  getProductsOnId(id:any):Observable<any>{
-    let filterById=this.URL+"?id="+id;
-    return this.http.get(filterById)
+  insertData(userObj:User):Observable<any>{
+  
+    let header= {'content-type':'application/json'};
+    //  console.log(userObj);
+   var URL=this.URL1+'/newRecord'
+    return this.http.post(URL,userObj,{'headers':header,responseType:'text'});
+   }
+   deleteRecord(iRecord:any):Observable<any>{
+    let deleteURL= this.URL1 +"/deleteUser/" +iRecord;
+     console.log("URL:"+deleteURL);
+    return this.http.delete(deleteURL,{responseType:'text'});
   }
-  // getProductsOnName(name:string):Observable<any>{
-  //  let filterByName=this.URL+"?firstname="+name;
-  //  console.log(filterByName);
-  //  return this.http.get(filterByName);
-  // }
+  updateEmployee(UserObj:any):Observable<any>
+  {
+    console.log(UserObj);
+    var URL=this.URL1+"/updateRecord";
+
+    let header ={'content-type':'application/json'}
+    return this.http.put(URL,UserObj,{'headers':header,'responseType':'text'});
+  }
+ 
 }

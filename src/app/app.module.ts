@@ -17,6 +17,9 @@ import { FilterTablePipe } from './filter-table.pipe';
 import { CardComponent } from './card/card.component';
 import { FilterPipe } from './filter.pipe';
 import { CheckoutComponent } from './Component/checkout/checkout.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { NgxStripeModule } from 'ngx-stripe';
+import { ThankuComponent } from './Component/thanku/thanku.component';
 
 
 @NgModule({
@@ -35,13 +38,19 @@ import { CheckoutComponent } from './Component/checkout/checkout.component';
     CardComponent,
     FilterPipe,
     CheckoutComponent,
+    ForgetpasswordComponent,
+    ThankuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxStripeModule.forRoot('pk_test_51K4WvDSD54SloB46t8xzL3H8LOJAhzkbREnq4x2QBY5Mif1aRaBBCtofAwAqNP3btHwtXum1VfhWzATIQLfrHvHs00oxxR6uvu')
   ],
   providers: [],
   bootstrap: [AppComponent]

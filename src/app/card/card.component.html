@@ -1,61 +1,5 @@
-<!-- <ng-container *ngIf="true">
-    <div class="container">
- <div class="card-table">
-     <div class="card-product">
 
-         <table class="table table-responsive">
-             <thead>
-                 <tr>
-                    <tr>
-                        <th>productId</th>
-                        <th>Product Name</th>
-                        <th>Product Image</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                 
-                 </tr>
-             </thead>
-             <tbody>
-                <tr >
-                    <td>1</td>
-                    <td> nn</td>
-                    <td>mmm</td>
-                    <td style="width: 25%;">mm</td>
-                    <th style="width: 12%;">00</th>
-                    <td style="width: 12%;">909</td>
-                    <td>
-                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4"></td>
-                    <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
-                    <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
-                    <td><button class="btn btn-success">Checkout</button></td>
-                    <td><strong>Grand Total : ${{grandTotal}}</strong></td>
-                </tr>
-            </tbody>
-         </table>
-     </div>
-  </div>
- </div>
-</ng-container>
-<ng-container *ngIf="false">
-<div class="container>">
-    <div class="card">
-        <h5 class="card-title">My Cart</h5>
-    </div>
-    <div class="center">
-        <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90">
-        <h4>Your cart is empty</h4>
-        <h4>Add item to it now</h4>
-        <button class="btn btn-primary">Shop Now</button>
-    </div>
-</div>
-</ng-container> -->
-<ng-container *ngIf="products.length !=0">
+<ng-container *ngIf="cartData.length !=0">
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
@@ -81,14 +25,30 @@
                             <th style="width: 12%;">{{item.cost}}</th>
                           
                             <td style="width: 12%;">
-                                <div class="form-group">
-                                      <button  class="button1"   (click)="decQuant(item.id)">-</button
-                                      >&nbsp;&nbsp;
-                                      <input type=number class=" input-box" value="{{item.quantity}}" (keyup)="find($event,item.id)" >
-                                      &nbsp;&nbsp;<button class="button1" (click)="incQuant(item.id)">
-                                        +
+                                <!-- <div class="form-group"> -->
+                                      <button  class="button1"  class="btn" (click)="decQuant(item.id)">
+                                        <i class="fa fa-minus" style="color:white;border: 2px solid red; background-color: red;"></i>
+                                     </button>
+                                      <!-- <input type="number" class=" input-box" value="{{item.quantity}}" (keyup)="find($event,item.id)" > -->
+                                      {{item.quantity}}
+                                      <button class="button1" class="btn" (click)="incQuant(item.id)">
+                                        <i class="fa fa-plus" style="color:white;border: 2px solid red; background-color: red;"></i>
                                       </button>
-                                  </div> 
+                                      <!-- <td style="width: 12%;">
+                                        <button type="button" class="btn" (click)="inc(item)"><i class="fa fa-plus" style="color:white;border: 2px solid red; background-color: red;"></i></button>
+                                            {{item.quantity}}
+                                        <button type="button" class="btn" (click)="dec(item)"><i class="fa fa-minus" style="color:white;border: 2px solid red; background-color: red;"></i></button></td>
+                                        <td style="width: 12%;" -->
+
+
+
+
+
+
+
+
+
+                                  <!-- </div>  -->
                             </td>
                             <td style="width: 12%;">{{item.quantity*item.cost}}</td>
                             <td>
@@ -100,7 +60,7 @@
                             <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
                             <td><button routerLink="/electronics" class="btn btn-primary">Shop More</button></td>
                             <td><button class="btn btn-success" routerLink="/payment">Checkout</button></td>
-                            <td><strong>Grand Total : ${{Totalprice}}</strong></td>
+                            <td><strong>Grand Total : ₹{{Totalprice}}</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -108,7 +68,7 @@
         </div>
     </div>
 </ng-container>
-<ng-container *ngIf="products.length ==0">
+<ng-container *ngIf="cartData.length ==0">
     <div class="container">
         <div class="card">
             <h5 class="card-title">My Cart</h5>

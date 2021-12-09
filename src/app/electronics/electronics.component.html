@@ -1,3 +1,95 @@
+
+<header>
+  <br>
+  <div class="navbar navbar-dark bg-success shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+       
+         
+          <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+          </div>
+          <span class="fas fa-search search-icon"></span>
+
+
+      </div>
+      <button routerLink="cart" class="btn btn-success">
+          <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+          <div style="font-size: 10px;" class="badge bg-danger">{{length1}}</div>
+      </button>
+  </div>
+</header>
+<div
+  class="bg-image"
+  style="
+    background-image: url('img3.jpeg');
+    
+    
+  "
+>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+          <a (click)="filter('')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+              <h6>All products</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('TV')">
+            <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/130/000000/external-tv-music-icongeek26-linear-colour-icongeek26.png"/>
+            <h6 style="text-align: center; ">Television</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Mobile')">
+            <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/130/000000/external-phone-communication-icongeek26-outline-colour-icongeek26.png"/>
+            <h6 style="text-align: center; ">Mobile</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('Laptop')">
+            <img src="https://img.icons8.com/emoji/125/000000/laptop-emoji.png"/>
+            <h6 style="text-align: center;">Laptop</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a (click)="filter('Speaker')">
+          <img src="https://img.icons8.com/external-wanicon-two-tone-wanicon/100/000000/external-speaker-happy-new-year-wanicon-two-tone-wanicon.png"/>
+          <h6 style="text-align: center;">Speaker</h6>
+        </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('Headphone')">
+        <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/120/000000/external-headphones-construction-justicon-lineal-color-justicon.png"/>
+        <h6 style="text-align: center;">HeadPhone</h6>
+      </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('Router')">
+      <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/100/000000/external-router-essentials-icongeek26-outline-colour-icongeek26.png"/>
+      <h6 style="text-align: center;">Router</h6>
+    </a>
+</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'productName'">
+          <div class="card col-md-5">
+              <img src="{{item.image}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Rating:-{{item.rating}}</h5>
+              <p><strong>Price:</strong> Rs{{item.cost}}</p>
+              
+              <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+      
 <!-- <br>
 <nav class="navbar navbar-light bg-success">
     <div class="container-fluid">
@@ -192,96 +284,4 @@
         </ul>
         <p class="copyright">Company Name © 2018</p>
     </footer>
-</div> -->
-<header>
-  <br>
-  <div class="navbar navbar-dark bg-success shadow-sm">
-      <div class="navbar-brand align-item-center d-flex">
-       
-         
-          <div class="form-group">
-              <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
-          </div>
-          <span class="fas fa-search search-icon"></span>
-
-
-      </div>
-      <button routerLink="cart" class="btn btn-success">
-          <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
-          <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
-      </button>
-  </div>
-</header>
-<div
-  class="bg-image"
-  style="
-    background-image: url('img3.jpeg');
-    
-    
-  "
->
-<div class="card-top container-fluid">
-  <div class="container d-flex">
-      <div class="item">
-          <a (click)="filter('')">
-              <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
-              <h6>All products</h6>
-          </a>
-      </div>
-      <div class="item">
-          <a (click)="filter('TV')">
-            <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/130/000000/external-tv-music-icongeek26-linear-colour-icongeek26.png"/>
-            <h6 style="text-align: center; ">Television</h6>
-          </a>
-      </div>
-      <div class="item">
-          <a (click)="filter('Mobile')">
-            <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/130/000000/external-phone-communication-icongeek26-outline-colour-icongeek26.png"/>
-            <h6 style="text-align: center; ">Mobile</h6>
-          </a>
-      </div>
-      <div class="item">
-          <a (click)="filter('Laptop')">
-            <img src="https://img.icons8.com/emoji/125/000000/laptop-emoji.png"/>
-            <h6 style="text-align: center;">Laptop</h6>
-          </a>
-      </div>
-      <div class="item">
-        <a (click)="filter('Speaker')">
-          <img src="https://img.icons8.com/external-wanicon-two-tone-wanicon/100/000000/external-speaker-happy-new-year-wanicon-two-tone-wanicon.png"/>
-          <h6 style="text-align: center;">Speaker</h6>
-        </a>
-    </div>
-    <div class="item">
-      <a (click)="filter('Headphone')">
-        <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/120/000000/external-headphones-construction-justicon-lineal-color-justicon.png"/>
-        <h6 style="text-align: center;">HeadPhone</h6>
-      </a>
-  </div>
-  <div class="item">
-    <a (click)="filter('Router')">
-      <img src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/100/000000/external-router-essentials-icongeek26-outline-colour-icongeek26.png"/>
-      <h6 style="text-align: center;">Router</h6>
-    </a>
-</div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'productName'">
-          <div class="card col-md-5">
-              <img src="{{item.image}}" alt="">
-              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
-              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Rating:-{{item.rating}}</h5>
-              <p><strong>Price:</strong> Rs{{item.cost}}</p>
-              
-              <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
-          </div>
-      </ng-container>
-
-  </div>
-</div>
-      
-       
+</div> -->       

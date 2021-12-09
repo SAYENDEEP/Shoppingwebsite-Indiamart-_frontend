@@ -6,8 +6,9 @@ import { AuthenticationService } from './services/authentication.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DAY7';
+  title = 'Indiamart';
  username1:any;
+ 
   constructor(private authenticationService:AuthenticationService){
     this.username1=localStorage.getItem("username");
   };

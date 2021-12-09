@@ -4,9 +4,79 @@
     
      <input type="number"   placeholder="Enter the id to Search"  [(ngModel)]="idForProductsRouting">&nbsp;&nbsp;
     <!-- <button type="button" class="button" (click)="routeBasedOnId()">Search Id</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-    <input type="text"   placeholder="Enter the Name to Search"  [(ngModel)]="nameForProductsRouting">&nbsp;&nbsp; 
+    <input type="text"   placeholder="Enter the Name to Search"  [(ngModel)]="nameForProductsRouting">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+ 
+
     <!-- <button type="button" >Search Name</button> -->
-    </h4><br>
+    <button class="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="makeaddtrue()">Add User</button> <br><br> 
+    </h4>
+    <br>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="userForm" >
+              <div class="mb-3">
+                <label  class="form-label">User Id</label>
+                <input type="number"  placeholder="Enter Your User Id"
+                  class="form-control" 
+                 aria-describedby="emailHelp"  
+                 formControlName="id">
+          
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">First Name</label>
+              <input type="text"  class="form-control" #holder 
+              placeholder="Enter First Name"
+              formControlName="firstname">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text"  class="form-control" 
+                #amount placeholder="Enter Your Last Name"
+                formControlName="lastname">
+              </div> 
+              <div class="mb-3 ">
+                <label  class="form-label">Email</label>
+                <input type="text" #emi class="form-control" 
+                placeholder="Enter your Email"
+                formControlName="email">
+              </div> 
+              <div class="mb-3 ">
+                <label  class="form-label">Phoneno</label>
+                <input type="text"  #Nomiee  class="form-control"  
+                placeholder="Enter your Phoneno"
+                formControlName="phoneno">
+              </div> 
+       
+              <div class="mb-3 ">
+                <label  class="form-label">Location</label>
+                <input type="text"  #Nomiee  class="form-control" 
+                 placeholder="Enter your Location"
+                 formControlName="location">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            
+            <button type="button" *ngIf="showadd==true" class="btn btn-primary" 
+            (click)="insertData1()" >ADD</button>
+             <button type="button" *ngIf="showadd!=true"class="btn btn-primary" 
+                (click)="updateRecord()" >Update</button>
+            <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 <table class="table table-hover table-bordered border-primary m-t-4">
   <thead class="thead-dark">
     <tr>
@@ -21,6 +91,9 @@
       <td>{{user1.email}}</td>
       <td>{{user1.phoneno}}</td>
       <td>{{user1.location}}</td>
+      <td><button class='btn btn-danger btn-sm' (click)="deleteRecord(user1.id)">Delete</button> &nbsp;&nbsp;&nbsp;
+      <button class='btn btn-success btn-sm ' data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit(user1)" >Edit</button></td>
+        
     </tr>
    
   </tbody>

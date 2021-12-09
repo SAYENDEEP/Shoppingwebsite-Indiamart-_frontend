@@ -26,23 +26,16 @@
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
-                formControlName="email"
+                formControlName="Emailno"
               />
-              <!-- <small id="emailHelp" class="form-text text-muted"
-                >We'll never share your email with anyone else.</small
-              > -->
-              <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && 
-              loginForm.hasError('required','email')">
-<<<<<<< HEAD
-              *Email Id is required</span>
-=======
+ 
+              <span class="text-danger" *ngIf="loginForm.controls['Emailno'].dirty && 
+              loginForm.hasError('required','Emailno')">
               *Email Id is invalid</span>
-              <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && 
-              loginForm.hasError('email','email')">
-
+              <span class="text-danger" *ngIf="loginForm.controls['Emailno'].dirty && 
+              loginForm.hasError('email','Emailno')">
               *Email Id is not in correct format </span>
               <!-- <span  style="color:red" *ngIf="email1 &&  email1.invalid && email1.touched">This field is not valid</span> -->
->>>>>>> main
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
@@ -51,17 +44,14 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
-                formControlName="password"
+                formControlName="Password"
               />
-              <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && 
-              loginForm.hasError('required','password')">
+              <span class="text-danger" *ngIf="loginForm.controls['Password'].dirty && 
+              loginForm.hasError('required','Password')">
                 *Password is required</span>
-<<<<<<< HEAD
-=======
-                <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && 
-                loginForm.hasError('required','password')">
+                <span class="text-danger" *ngIf="loginForm.controls['Password'].dirty && 
+                loginForm.hasError('required','Password')">
                   *Password is not of required minimum length</span>
->>>>>>> main
             </div>
             <br />
             <button type="submit" [disabled]="!loginForm.valid"  class="btn btn-primary">Login</button>
@@ -69,6 +59,9 @@
           <a style="color: white; margin-top: 10px" routerLink="/signUp"
             >New User?click to signUp!!</a
           >
+          <a style="color: white; margin-top: 10px" routerLink="/forget"
+          >Forget Password</a
+        >
         </div>
       </div>
     </div>

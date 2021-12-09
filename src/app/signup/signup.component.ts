@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder,FormGroup,Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import {LoginregisterService} from '../services/loginregister.service'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,44 +11,33 @@ import { map } from 'rxjs/operators';
 })
 export class SignupComponent implements OnInit {
   public signupForm!:FormGroup;
-  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router) { }
+  constructor(private formBuilder:FormBuilder,private http:HttpClient, private router:Router,private LoginregisterService:LoginregisterService) { }
 
   ngOnInit(): void {
     this.signupForm=this.formBuilder.group({
-      firstName:['',Validators.required],
-      lastName:['',Validators.required],
-      password:['',[Validators.required,Validators.minLength(6)]],
-      number :['',[Validators.required, Validators.pattern("[0-9 ]{12}")]],
-      email :['',[Validators.required,Validators.email]],
-      admin:[''],
-      location:['',Validators.required],
+      Firstname:['',Validators.required],
+      Lastname:['',Validators.required],
+      Password:['',[Validators.required,Validators.minLength(6)]],
+      Phoneno:['',[Validators.required, Validators.pattern("[0-9 ]{10}")]],
+      Emailno :['',[Validators.required,Validators.email]],
+      // admin:[''],
+      Location:['',Validators.required],
       
     })
   }
   signUp()
   {
-    if(this.signupForm.value.admin==true){
-      this.http.post<any>("http://localhost:3000/admin",this.signupForm.value)
-      .subscribe(res=>
-        {
-          
-          this.signupForm.reset();
-          this.router.navigate(['login']);
-        },
-        err=>{
-          alert("SomeThing Went wrong!");
-        })
-      }
-    this.http.post<any>("http://localhost:3000/signUpUsers",this.signupForm.value)
-    .subscribe(res=>
+    this.LoginregisterService.registerUser(this.signupForm.value).subscribe
+    (
+      (data)=>
       {
-        alert("signUpSuccessFull");
-        this.signupForm.reset();
-        this.router.navigate(['login']);
+        alert(data);
+        console.log(JSON.stringify(data));
+        this.router.navigate(['/login']);
       },
-      err=>{
-        alert("SomeThing Went wrong!");
-      })
+      (error)=> console.log("Error encountered")
+    );   
+   
   }
 
 }
